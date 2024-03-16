@@ -44,5 +44,13 @@ require("lazy").setup({
         config = function(_, opts) require'lsp_signature'.setup(opts) end
     },
 
-	{'Hoffs/omnisharp-extended-lsp.nvim'}
+	{'Hoffs/omnisharp-extended-lsp.nvim'},
+
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true
+        -- use opts = {} for passing setup options
+        -- this is equalent to setup({}) function
+    }
 })
