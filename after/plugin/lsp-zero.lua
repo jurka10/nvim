@@ -26,7 +26,8 @@ lsp_zero.format_on_save({
     },
     servers = {
         ['omnisharp'] = { 'cs' },
-        ['lua_ls'] = { 'lua' }
+        ['lua_ls'] = { 'lua' },
+        ['html'] = { 'html' }
     }
 })
 
@@ -47,8 +48,15 @@ require('mason-lspconfig').setup({
             require 'lspconfig'.omnisharp.setup {
                 handlers = { ['textDocument/definition'] = require('omnisharp_extended').handler }
             }
+        end,
+        html = function()
+            require 'lspconfig'.html.setup {}
+        end,
+        htmx = function()
+            require 'lspconfig'.htmx.setup {}
+        end,
+        lua_ls = function()
+            require 'lspconfig'.lua_ls.setup {}
         end
-
     },
 })
-require('lspconfig').lua_ls.setup({})
